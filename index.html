@@ -46,6 +46,10 @@
 
 
   .text-links { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 19px; }
+  .related-links { display: block; margin: 0; padding: 0; list-style: none; }
+  .related-links li { position: relative; padding-left: 1.1em; }
+  .related-links li + li { margin-top: 4px; }
+  .related-links li::before { content: "-"; position: absolute; left: 0; color: var(--muted); }
   .text-links a, .affil a, .copy, .authors a {
     color: var(--muted);
     text-decoration: none;
@@ -133,6 +137,10 @@
   }
   .tab:hover { border-color: var(--fg); color: var(--fg); font-weight: 700; }
   .tab.active { border-color: var(--fg); color: var(--fg); background: #fff; font-weight: 700; }
+  @media (max-width: 640px) {
+    .tabs { flex-direction: column; }
+    .tab { width: 100%; padding: 12px 14px; font-size: 16px; text-align: center; }
+  }
 
   .figure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
   .figure-card {
@@ -287,7 +295,7 @@
       <h2>Showcase</h2>
 
       <div class="tabs" role="tablist">
-        <button class="tab active" data-panel="talk" type="button">RAID Talk</button>
+        <button class="tab active" data-panel="talk" type="button">RAID'26 Talk</button>
         <button class="tab" data-panel="design" type="button">Figures</button>
         <button class="tab" data-panel="irq" type="button">Case Study: IRQ Protection</button>
         <button class="tab" data-panel="baseline" type="button">Case Study: Baseline</button>
@@ -356,18 +364,11 @@
   <section class="band bg-gray">
     <div class="wrap">
       <h2>Related</h2>
-      <div class="text-links">
-        <a href="https://ahoi-attacks.github.io/">Ahoi Attacks: Disrupting TEEs with Malicious Notifications</a>
-      </div>
-
-      <div class="text-links">
-        <a href="https://sectrs-acai.github.io/">Acai: Protecting Accelerator execution with Arm CCA</a>
-      </div>
-
-      <div class="text-links">
-        <a href="https://opencca.github.io/">OpenCCA: An Open Framework to Enable Arm CCA Research</a>
-      </div>
-
+      <ul class="text-links related-links">
+        <li><a href="https://ahoi-attacks.github.io/">Ahoi Attacks: Disrupting TEEs with Malicious Notifications</a></li>
+        <li><a href="https://sectrs-acai.github.io/">Acai: Protecting Accelerator execution with Arm CCA</a></li>
+        <li><a href="https://opencca.github.io/">OpenCCA: An Open Framework to Enable Arm CCA Research</a></li>
+      </ul>
     </div>
   </section>
   <br />
