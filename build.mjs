@@ -47,5 +47,6 @@ for (const entry of await readdir(".")) {
   if (entry.endsWith(".html")) await cp(entry, path.join(DIST, entry));
 }
 await cp("assets", path.join(DIST, "assets"), { recursive: true });
+for (const f of ["robots.txt", "sitemap.xml"]) await cp(f, path.join(DIST, f));
 
 for await (const file of walk(DIST)) await minifyFile(file);

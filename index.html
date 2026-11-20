@@ -3,22 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Devlore: Device Interrupt Protection for Confidential VMs</title>
-<meta name="description" content="Devlore: Device Interrupt Protection for Confidential VMs. RAID 2026.">
+<title>Devlore: Device Interrupt Protection for Confidential VMs on Arm CCA</title>
+<meta name="description" content="Devlore protects device interrupts of confidential VMs on Arm CCA (Confidential Computing Architecture). RAID 2026 paper, talk, slides and case study videos.">
 <meta name="keywords" content="confidential computing, confidential VM, Arm CCA, interrupt isolation, device interrupts, RAID 2026">
 <link rel="canonical" href="https://sectrs-devlore.github.io/">
 <link rel="icon" href="/assets/logo.png" type="image/png">
 
+<meta name="citation_title" content="Devlore: Device Interrupt Protection for Confidential VMs">
+<meta name="citation_author" content="Bertschi, Andrin">
+<meta name="citation_author" content="Sridhara, Supraja">
+<meta name="citation_author" content="Kuhne, Mark">
+<meta name="citation_author" content="Schlüter, Benedict">
+<meta name="citation_author" content="Groschupp, Friederike">
+<meta name="citation_author" content="Thorens, Clément">
+<meta name="citation_author" content="Dutly, Nicolas">
+<meta name="citation_author" content="Capkun, Srdjan">
+<meta name="citation_author" content="Shinde, Shweta">
+<meta name="citation_conference_title" content="International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2026)">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_pdf_url" content="https://sectrs-devlore.github.io/assets/devlore_raid26.pdf">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Devlore: Device Interrupt Protection for Confidential VMs",
+  "name": "Devlore: Device Interrupt Protection for Confidential VMs",
+  "description": "Devlore is a device interrupt isolation mechanism that protects confidential VMs from interrupt manipulation attacks, prototyped on the Arm Confidential Computing Architecture (Arm CCA).",
+  "url": "https://sectrs-devlore.github.io/",
+  "image": "https://sectrs-devlore.github.io/assets/logo.png",
+  "datePublished": "2026",
+  "keywords": ["Arm CCA", "confidential computing", "confidential VM", "device interrupts", "interrupt isolation", "RAID 2026"],
+  "author": [
+    {"@type": "Person", "name": "Andrin Bertschi", "url": "https://abertschi.ch/"},
+    {"@type": "Person", "name": "Supraja Sridhara", "url": "https://suprajas.com/"},
+    {"@type": "Person", "name": "Mark Kuhne", "url": "https://security.zauney.ch/"},
+    {"@type": "Person", "name": "Benedict Schlüter", "url": "https://benschlueter.com/"},
+    {"@type": "Person", "name": "Friederike Groschupp"},
+    {"@type": "Person", "name": "Clément Thorens", "url": "https://clement-thorens.ch/"},
+    {"@type": "Person", "name": "Nicolas Dutly"},
+    {"@type": "Person", "name": "Srdjan Capkun"},
+    {"@type": "Person", "name": "Shweta Shinde", "url": "https://www.shwetashinde.com/"}
+  ],
+  "publisher": {"@type": "Organization", "name": "ETH Zurich"},
+  "isPartOf": {"@type": "PublicationEvent", "name": "International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2026)", "url": "https://raid2026.org/"},
+  "encoding": {"@type": "MediaObject", "contentUrl": "https://sectrs-devlore.github.io/assets/devlore_raid26.pdf", "encodingFormat": "application/pdf"},
+  "sameAs": ["https://arxiv.org/abs/2408.05835"]
+}
+</script>
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Devlore: Device Interrupt Protection for Confidential VMs">
-<meta property="og:description" content="Devlore: Device Interrupt Protection for Confidential VMs. RAID 2026.">
+<meta property="og:title" content="Devlore: Device Interrupt Protection for Confidential VMs on Arm CCA">
+<meta property="og:description" content="Devlore protects device interrupts of confidential VMs on Arm CCA (Confidential Computing Architecture). RAID 2026 paper, talk, slides and case study videos.">
 <meta property="og:url" content="https://sectrs-devlore.github.io/">
 <meta property="og:image" content="https://sectrs-devlore.github.io/assets/logo.png">
 <meta property="og:site_name" content="Devlore">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Devlore: Device Interrupt Protection for Confidential VMs">
-<meta name="twitter:description" content="Devlore: Device Interrupt Protection for Confidential VMs. RAID 2026.">
+<meta name="twitter:title" content="Devlore: Device Interrupt Protection for Confidential VMs on Arm CCA">
+<meta name="twitter:description" content="Devlore protects device interrupts of confidential VMs on Arm CCA (Confidential Computing Architecture). RAID 2026 paper, talk, slides and case study videos.">
 <meta name="twitter:image" content="https://sectrs-devlore.github.io/assets/logo.png">
 <style>
   :root {
@@ -264,7 +307,7 @@
       from interrupt manipulation attacks. Our design employs a <a class="showcase-link" href="#showcase" data-show="design">delegate-but-check</a> strategy by
       offloading interrupt management to the hypervisor while adding correctness checks in
       trusted software.</p>
-      <p>We prototype our design on the Arm Confidential Computing Architecture (CCA). We evaluate
+      <p>We prototype our design on the Arm Confidential Computing Architecture (Arm CCA). We evaluate
       it on Arm FVP using four diverse devices attached to confidential VMs and report costs on a
       <a href="https://opencca.github.io" style="text-decoration: underline;">Rock 5B board</a>. Our <a class="showcase-link" href="#showcase" data-show="irq">case studies</a> demonstrate the feasibility of real-world use cases, while
       <strong>Devlore</strong> incurs only 0.06% <a class="showcase-link" href="#showcase" data-show="design">overhead</a> for typical integrated GPU applications.</p>
